@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ENTER VEHICLE</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="{%  static 'css/styleFormEnterVehicle.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    ::before
+    <div class="div2" >
+
+        <h1 align="center" class="gradient-text"> ENTER VEHICLE </h1>
+
+            <form method="post" enctype="multipart/form-data">
+                {%csrf_token%}
+                {{ form.as_p }}
+
+                <div align="center">
+                    <button  class="botonS" type="submit">Create</button>
+                    <a  class="botonS2" href="{% url  'ticketEntry'  %}">Create Ticket</a>
+                    <a  class="botonS2" href="{% url  'principal'  %}">Back</a>
+                </div>
+            </form>
+        {% if img_obj %}
+              <h3>Succesfully uploaded : {{img_obj.brand}}</h3>
+              <img  class="imageVehicle" src="{{ img_obj.vehicle_photo.url}}" alt="connect" >
+        {% endif %}
+
+    </div>
+</body>
+</html>

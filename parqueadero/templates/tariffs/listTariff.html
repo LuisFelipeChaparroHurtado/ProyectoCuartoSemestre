@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{%  static 'css/styleWebPage.css' %}">
+    <script src="https://kit.fontawesome.com/630f03d38f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" />
+    <title>LISTA DE TARIFAS</title>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="icono-menu">
+                <img src="http://assets.stickpng.com/images/588a64e0d06f6719692a2d10.png" alt="" id="icono-menu">
+            </div>
+            <div class="icono-crear">
+                <img src="../../../resources/Logo/crear.png" alt="" id="icono-crear">
+            </div>
+            <div class="icono-modificar">
+
+                <img src="../../../resources/Logo/editar.png" alt="" id="icono-modificar">
+            </div>
+            <img class="imagLogo" src="../../../resources/Logo/LogoFinal.png">
+        </nav>
+    </header>
+
+
+        <div class="cont-menu active" id="menu">
+            <ul>
+                <br>
+                <h1>LISTA DE TARIFAS</h1> <br><br>
+                <a class="selectButton" href="{%url  'createPerson' %}"> <li> <i class="fas fa-car"> </i> Ingreso de Vehiculo </li></a>
+                <a class="selectButton" href="{%url  'listVehicles' %}"> <li> <i class="fas fa-car"></i> Salida de Vehiculo </li></a>
+                <a class="selectButton" href="{%url  'listPerson' %}"> <li> <i class="fas fa-user"></i> Clientes </li></a>
+                <a class="selectButton" href="{%url  'listVehicles' %}"><li> <i class="fas fa-car-side"></i>Vehiculos </li></a>
+                <li> <i class="fas fa-dollar-sign"></i> <span>     Caja</span></li>
+                <a class="selectButton" href="{%url  'listTariff' %}"><li> <i class="fas fa-money-bill-alt"></i>Tarifa </li></a>
+                <a class="selectButton" href="{%url  'generarPDF' %}" target="_blank"> <li> <i class="far fa-file-alt"></i> Reportes </li></a>
+                <a class="selectButton" href="{%url  'principal' %}"> <li> <i class="fas fa-sign-in-alt"></i>Volver </li></a>
+            </ul>
+        </div>
+        <div class="cont-menu active" id="modificar">
+           <ul>
+                <br>
+                <h1>MODIFICAR</h1> <br><br>
+                <a class="selectButton" href="{%url  'listParkingLot' %}"> <li> <i class="fas fa-plus"></i> M.Parqueadero </li></a>
+                <a class="selectButton" href="{%url  'listCash' %}"> <li> <i class="fas fa-plus"></i> M.Caja</li></a>
+                <a class="selectButton" href="{%url  'listBay' %}"> <li> <i class="fas fa-plus"></i> M.Bahia </li></a>
+                <a class="selectButton" href="{%url  'listPerson' %}"> <li> <i class="fas fa-plus"></i> M.Persona </li></a>
+                <a class="selectButton" href="{%url  'listVehicles' %}"> <li> <i class="fas fa-plus"></i> M.Vehiculo </li></a>
+                <a class="selectButton" href="{%url  'listTypeVehicle' %}"> <li> <i class="fas fa-plus"></i> M.T_Vehiculo </li></a>
+                <a class="selectButton" href="{%url  'listTariff' %}"> <li> <i class="fas fa-plus"></i> </i> M.Tarifa </li></a>
+            </ul>
+        </div>
+
+    <script src="/static/script/mainWeb.js"></script>
+    <script src="/static/script/crear.js"></script>
+    <script src="/static/script/modificar.js"></script>
+
+
+    <section>
+        <div class="reloj" align="center">
+            <span class="alinearHora" id="reloj">  </span>
+            <span class="alinearFecha" id="fec_Datos"></span>
+        </div>
+        <script src="/static/script/relojWeb.js"></script>
+    </section>
+    {% for item in parqueadero %}
+        <hr class="linea" color="#01C501" size="1">
+            <div class="franjaVerde">
+                <p> Parqueadero ubicado en la {{ item.location }}</p>
+            </div>
+        <hr class="linea2" color="#01C501 " size="3">
+
+        <h2 class="parqueadero"> {{ item.name }} (Tarifas)</h2>
+
+    <body2>
+        <div class="footer"> </div>
+        <table class="tableTariff" border="1">
+            <tr>
+                <th class="marginTable" scope="row">Tipo de vehiculo</th>
+                <th>Descripcion</th>
+                <th>Costo</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+                {% for item in list %}
+                        <tr>
+                            <td align="center" class="margen">{{ item.vehicle_class }}</td>
+                            <td class="margen">{{ item.description }}</td>
+                            <td class="margen">{{ item.tariff_id }}</td>
+                            <td class="margen">
+                                <a class="selectButtonDeleteTariff" href="{%url  'editTariff' item.tariff_id.pk %}"> <i class="fas fa-pen-square"></i></a>
+                            </td>
+                            <td class="margen">
+                                <a class="selectButtonDeleteTariff" href="{%url  'deleteTariff' item.tariff_id.pk %}"> <i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                {% endfor %}
+            </table>
+    </body2>
+    {% endfor %}
+    <hr class="linea" color="#01C501" size="1">
+            <div class="franjaVerde">
+            </div>
+        <hr class="linea2" color="#01C501 " size="3">
+
+</body>
+</html>

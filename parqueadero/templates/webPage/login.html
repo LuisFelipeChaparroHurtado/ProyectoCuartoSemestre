@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FORM LOGIN | Fazt</title>
+    <link rel="stylesheet" href="{% static 'css/styleLogin.css' %}">
+</head>
+<body>
+<div id="contenedor_carga">
+        <div id="carga"></div>
+    </div>
+<div class="contenedor">
+    <header>
+        <h1 class="title"> PARKING LOT</h1>
+        <a class="ingresar" href="{%url  'login' %}">Get Into</a>
+    </header>
+
+        <div class="login">
+            <article class="fondo">
+
+                <img class="avatar" src="https://png.pngtree.com/png-vector/20190919/ourlarge/pngtree-user-login-or-authenticate-icon-on-gray-background-flat-icon-ve-png-image_1742031.jpg">
+                <h1>LOGIN HERE</h1>
+                <form action="{% url 'login' %}" method="post">
+                    {%csrf_token%}
+                    <label for="username">Username</label>
+                    <input type="user" name="username" placeholder="Enter username">
+
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Enter password">
+                    <input type="submit" value="Login In">
+
+                    <a href="#">Los your password</a>
+                    <br>
+                    <a href="#">Don't have an account?</a>
+                </form>
+                    {{ error }}
+                </article>
+        </div>
+    </div>
+<script>
+        window.onload= function (){
+            var contenedor= document.getElementById('contenedor_carga');
+            contenedor.style.visibility='hidden';
+            contenedor.style.opacity='0';
+        }
+    </script>
+</body>
+</html>

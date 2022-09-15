@@ -1,0 +1,232 @@
+
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+
+
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+/* Main styles */
+body {
+  margin-top: 17rem;
+  color: #01C501;
+  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+  text-align: center;
+  /* img size is 50x50 */
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse .92s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse .92s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse .92s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse .92s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+body::before {
+  content: "PARKING LOT";
+    margin-left: 50%;
+  font-size: 6rem;
+  font-weight: 100;
+  font-style: normal;
+}
+
+form{
+    margin-top: -5%;
+}
+form input{
+    color: rgb(1, 197, 1);
+    padding-left: 10%;
+    width: 57%;
+    float: left;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid black;
+    padding-bottom: 12px;
+    padding-top: 11px;
+    margin-top: -42px;
+    margin-left: 30%;
+}
+form label{
+    padding-top: 7px;
+    padding-bottom: 12px;
+    height: 29%;
+    width: 30%;
+    margin-top: 5%;
+    border-radius: 5px 0px 0px 5px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+#id_state{
+    margin-top: -6%;
+    margin-left: 60%;
+}
+.div2 h1{
+    color: #01C501;
+    margin-bottom: 5%;
+    margin-top: 0%;
+}
+.botonS {
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    font-family: 'Playfair Display SC', serif;
+    text-decoration: black;
+    margin-left: -1%;
+    font-weight: 100;
+    font-size: 16px;
+    margin-top: 10%;
+    padding-top: 3px;
+    padding-bottom: 4px;
+    padding-left: 30px;
+    padding-right: 30px;
+    left: 800px;
+    color: white;
+    background-color: black;
+}
+.botonForm {
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    font-family: 'Playfair Display SC', serif;
+    text-decoration: black;
+    margin-left: 3%;
+    font-weight: 100;
+    font-size: 16px;
+    margin-top: 8%;
+    padding-top: 3px;
+    padding-bottom: 4px;
+    padding-left: 50px;
+    padding-right: 50px;
+    left: 800px;
+    color: white;
+    background-color: black;
+}
+
+.botonS2 {
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    font-family: 'Playfair Display SC', serif;
+    text-decoration: black;
+    font-weight: 100;
+    font-size: 16px;
+    margin-top: 7%;
+    margin-left: 1%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: white;
+    background-color: black;
+}
+label {
+    color:#ffffff;
+    font-family: 'Playfair Display SC', serif;
+    float: left;
+    width: 120px;
+  }
+input {
+    float: left;
+    width: calc(100% - 20px);
+    color: white;
+}
+
+
+.div2{
+    border-radius: 12px;
+    width: 520px;
+    height: 640px;
+    background-color: white;
+    color: black;
+    top: 50%;
+    left: 30%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 60px 30px;
+    -webkit-box-shadow: 4px 4px 31px -5px rgb(1, 197, 1);
+    -moz-box-shadow: 4px 4px 31px -5px rgb(1, 197, 1);
+    box-shadow: 4px 4px 31px -5px rgb(1, 197, 1);
+}
+.divForm{
+    border-radius: 12px;
+    width: 550px;
+    height: 695px;
+    background-color: white;
+    color: black;
+    top: 50%;
+    left: 30%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 60px 30px;
+    -webkit-box-shadow: 4px 4px 31px -5px rgb(1 197 1);
+    -moz-box-shadow: 4px 4px 31px -5px rgb(1, 197, 1);
+    box-shadow: 4px 4px 31px -5px rgb(1 197 1);
+}
+.div2 h1{
+    color: #01C501;
+    margin-bottom: 3%;
+    margin-top: -7%;
+}
+.divForm h1{
+    color: #01C501;
+    margin-bottom: 3%;
+    margin-top: -8%;
+}
+.botonS {
+    float: none !important;
+    width: 30%;
+}
+.botonForm{
+    float: none !important;
+    width: 30%;
+}
+.botonS2 {
+    float: none !important;
+    width: 30%;
+}
+
+.botonForm {
+    float: none !important;
+    width: 30%;
+}

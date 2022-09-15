@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CREATED PARKING LOT</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="{%  static 'css/styleParkingLot.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    ::before
+    <div class="div2" >
+
+        <h1 align="center" class="gradient-text"> CREATED PARKING LOT </h1>
+
+            <form method="post" enctype="multipart/form-data">
+                {%csrf_token%}
+                {{ form.as_p }}
+
+                <div align="center">
+                    <button  class="botonS" type="submit">Submit</button>
+                    <a  class="botonS2" href="{% url  'principal' %}">Back</a>
+                </div>
+
+
+            </form>
+        {% if img_obj %}
+              <h3>Succesfully uploaded : {{img_obj.name}}</h3>
+              <img  class="imageParkingLot" src="{{ img_obj.image.url}}" alt="connect">
+        {% endif %}
+
+    </div>
+</body>
+</html>

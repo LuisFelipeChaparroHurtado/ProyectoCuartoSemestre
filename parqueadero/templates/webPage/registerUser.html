@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FORM LOGIN | Parking</title>
+    <link rel="stylesheet" href="{% static 'css/styleLogin.css' %}">
+</head>
+<body>
+
+<div id="contenedor_carga">
+        <div id="carga"></div>
+    </div>
+<div class="contenedor">
+
+    <header>
+        <h1 class="title"> PARKING LOT</h1>
+        <a class="ingresar" href="{%url  'login' %}">Get Into</a>
+    </header>
+
+        <div class="login">
+            <article class="fondo">
+
+                <img class="avatar" src="https://png.pngtree.com/png-vector/20190919/ourlarge/pngtree-user-login-or-authenticate-icon-on-gray-background-flat-icon-ve-png-image_1742031.jpg">
+                <h1>LOGIN HERE</h1>
+                <form class="formRegister" action="{% url 'registerUser' %}" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="ubicacionBoton">
+                        <input class="boton" type="submit" value="Register">
+                    </div>
+                </form>
+                    {{ error }}
+                </article>
+        </div>
+    </div>
+    <script>
+        window.onload= function (){
+            var contenedor= document.getElementById('contenedor_carga');
+            contenedor.style.visibility='hidden';
+            contenedor.style.opacity='0';
+        }
+    </script>
+</body>
+</html>

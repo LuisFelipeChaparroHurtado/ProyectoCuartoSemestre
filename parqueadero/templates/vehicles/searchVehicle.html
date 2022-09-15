@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{%  static 'css/styleWebPage.css' %}">
+    <script src="https://kit.fontawesome.com/630f03d38f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" />
+    <title>MENU HAMBURGUESA</title>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="icono-menu">
+                <img src="http://assets.stickpng.com/images/588a64e0d06f6719692a2d10.png" alt="" id="icono-menu">
+            </div>
+            <img class="imagLogo" src="../../../resources/Logo/LogoFinal.png">
+        </nav>
+    </header>
+
+
+        <div class="cont-menu active" id="menu">
+            <ul>
+                <br>
+                <h1>BUSCAR VEHICULO</h1> <br><br>
+                <a class="selectButton" href="{%url  'createPerson' %}"> <li> <i class="fas fa-car"> </i> Ingreso de Vehiculo </li></a>
+                <a class="selectButton" href="{%url  'exitVehicle' %}"> <li> <i class="fas fa-car"></i> Salida de Vehiculo </li></a>
+                <a class="selectButton" href="{%url  'exitVehicle' %}"> <li> <i class="fas fa-user"></i> Clientes </li></a>
+                <a class="selectButton" href="{%url  'listVehicles' %}"><li> <i class="fas fa-car-side"></i>Vehiculos </li></a>
+                <li> <i class="fas fa-dollar-sign"></i> <span>     Caja</span></li>
+                <a class="selectButton" href="{%url  'listTariff' %}"><li> <i class="fas fa-money-bill-alt"></i>Tarifa </li></a>
+                <a class="selectButton" href="{%url  'generarPDF' %}" target="_blank"> <li> <i class="far fa-file-alt"></i> Reportes </li></a>
+                <a class="selectButton" href="{%url  'principal' %}"> <li> <i class="fas fa-sign-in-alt"></i>Volver </li></a>
+            </ul>
+        </div>
+
+    <script src="/static/script/mainWeb.js"></script>
+
+    <section>
+        <div class="reloj" align="center">
+            <span class="alinearHora" id="reloj">  </span>
+            <span class="alinearFecha" id="fec_Datos"></span>
+        </div>
+        <script src="/static/script/relojWeb.js"></script>
+    </section>
+    {% for item in parqueadero %}
+    <hr class="linea" color="#01C501" size="1">
+    <div class="franjaVerde">
+        <p> Parqueadero ubicado en la {{ item.location }}</p>
+    </div>
+    <hr class="linea2" color="#01C501 " size="3">
+
+        <h2 class="parqueadero"> {{ item.name }} </h2>
+    {% endfor %}
+
+
+
+    <div class="ubicacion">
+        <form action="{% url 'searchVehicle' %}" method="post" align="center"  >
+            <input name="search" type="text" class="icon-placeholder" placeholder="  Searh" >
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <body2>
+        <div class="footer"> </div>
+        {% for item in ListV %}
+                <div class="posicionCard">
+                    <div class="cardSearch">
+                        <div class="cardSearch-img">
+                            <img  class="imageVehicle" src="{{ item.vehicle_photo.url}}" alt="connect">
+                        </div>
+                        <div class="cardSearch-content">
+                                <p> <b>Propietario: </b> {{ item.person_id }}</p><br>
+                                <p> <b>Tipo Vehiculo: </b> {{ item.typevehicle_id }}</p><br>
+                                <p> <b>Marca: </b> {{ item.brand }}</p><br>
+                                <p> <b>Modelo: </b> {{ item.model }}</p><br>
+                                <p> <b>Placa: </b> {{ item.license_plate }}</p><br>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+    </body2>
+</body>
+</html>

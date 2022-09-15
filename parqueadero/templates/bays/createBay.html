@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CREATE BAY</title>
+    <link rel="stylesheet" href="{%  static 'css/styleFormTotal.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    ::before
+    <div class="div2" >
+
+        <h1 align="center" class="gradient-text"> CREATE BAY </h1>
+
+            <form method="post">
+                {%csrf_token%}
+                {{ form.as_p }}
+
+                <div align="center">
+                    <input type="submit" value="send" class="botonS">
+                    <a  class="botonS2" href="{% url  'principal' %}">Back</a>
+                </div>
+            </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CREATE CASH</title>
+    <link rel="stylesheet" href="{%  static 'css/styleFormCash.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    ::before
+    <div class="divForm" >
+
+        <h1 align="center" class="gradient-text"> CREATE CASH </h1>
+
+            <form method="post" target="_blank">
+                {%csrf_token%}
+                {{ form.as_p }}
+
+                <div align="center">
+                    <input type="submit" value="send" class="botonS">
+                    <a  class="botonForm" href="{% url  'principal' %}">Back</a>
+                </div>
+            </form>
+    </div>
+</body>
+</html>

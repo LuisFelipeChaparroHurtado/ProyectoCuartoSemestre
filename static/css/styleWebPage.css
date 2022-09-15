@@ -1,0 +1,630 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    position: relative;
+    background-color: rgb(1, 197, 1);
+    width: 100%;
+    clear: both;
+    content: '';
+    z-index: 10;
+    display: table;
+    box-shadow: 2px 0px 5px 2px rgb(40 40 40);
+}
+nav{
+
+    float:left;
+}
+
+.imagLogo{
+    width: 184px;
+    height: 65px;
+    position: absolute;
+    margin-left: 83%;
+    margin-top: -67px;
+}
+.icono-menu{
+    margin: 17px 50px;
+    position: relative;
+    z-index: 10;
+}
+
+.icono-crear{
+    margin: 17px 50px;
+    position: relative;
+    z-index: 10;
+    margin-top: -39%;
+    margin-left: 100%;
+}
+.icono-modificar{
+    margin: 17px 50px;
+    position: relative;
+    z-index: 10;
+    margin-top: -39%;
+    margin-left: 165%;
+}
+.icono-modificar1{
+    margin: 17px 50px;
+    position: relative;
+    z-index: 10;
+    margin-top: -39%;
+    margin-left: 165%;
+}
+
+.icono-menu img{
+    vertical-align: top;
+    width: 37px;
+    cursor: pointer;
+}
+.icono-crear img{
+    vertical-align: top;
+    width: 37px;
+    cursor: pointer;
+}
+.icono-modificar img{
+    vertical-align: top;
+    width: 37px;
+    cursor: pointer;
+}
+.icono-modificar1 img{
+    vertical-align: top;
+    width: 37px;
+    cursor: pointer;
+}
+/*Estilos para el contenedor del Menú*/
+
+.cont-menu{
+    background-color: black;
+    /* box-shadow: 2px 0px 5px 2px rgb(40 40 40); */
+    width: 300px;
+    height: 90vh;
+    position: absolute;
+    z-index: 10;
+    top: 72px;
+    left: 0;
+    transition: all .5s ease;
+}
+
+.active{
+    transform: translate(-600px);
+}
+
+.opacity{
+    transition: all .5s ease;
+}
+
+/*Estilos para el listado del Menú*/
+.selectButton{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.selectButtonDelete{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 220px;
+    margin-top: -30px;
+}
+.selectButtonDeleteCash{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 255px;
+    margin-top: -5px;
+}
+.selectButtonDeleteTariff{
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.selectButtonDeleteVehicle{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 240px;
+    margin-top: 162px;
+}
+.selectButtonDeletePerson{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 250px;
+    margin-top: 203px;
+}
+.selectButtonCash{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 283px;
+    margin-top: -7px;
+}
+.selectButtonDeleteParking{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 220px;
+    margin-top: 19px;
+}
+.selectButtonEdit{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 190px;
+    margin-top: -30px;
+}
+.selectButtonEditCash{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 227px;
+    margin-top: -4px;
+}
+.selectButtonEditVehicle{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 210px;
+    margin-top: 163px;
+}
+
+.selectButtonTicketVehicle{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 272px;
+    margin-top: 163px;
+}
+
+.selectButtonEditPerson{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 220px;
+    margin-top: 204px;
+}
+.selectButtonEditParking{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 190px;
+    margin-top: 20px;
+}
+.selectButtonBack{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 76%;
+    margin-top: -30px;
+}
+
+.selectButtonBackVehicles{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 1%;
+    margin-top: -26px;
+}
+
+.selectButtonBackCash{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 76%;
+    margin-top: 40px;
+}
+
+.selectButtonBackParking{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 76%;
+    margin-top: 331px;
+}
+
+ul{
+    list-style: none;
+}
+.cont-menu ul{
+    padding: 100px 0px 20px 0px;
+    list-style: none;
+}
+
+.cont-menu ul h1{
+    margin-left: 30px;
+    color: white;
+    font-size: 18px;
+}
+.cont-menu ul li{
+    color: white;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.cont-menu ul li i{
+    margin-right: 1em;
+}
+.cont-menu ul li:hover{
+    background-color: rgb(228,228,228);
+    color: rgb(42,42,42);
+}
+
+
+/*Reloj*/
+section{
+    position: absolute;
+    height: 25%;
+    left: 41%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.reloj{
+    display: inline-table;
+    color: black;
+    padding: 22px;
+    font-weight: bold;
+    font-size: 27px;
+    border-radius: 4px;
+    box-shadow: 2px 3px 6px rgb(1, 197, 1),
+                10px 10px 10px rgba(0,0,0,0.1),
+                inset -8px -8px 15px rgba(255,255,255,0.5),
+                inset 10px 10px 10px rgba(0,0,0,0.1);
+}
+
+.alinearHora{
+    padding-right: 100px;
+    padding-left: 28px;
+}
+.alinearFecha{
+    padding-right: 40px;
+}
+
+/*OTROS*/
+.franjaVerde{
+    background-color: rgb(1, 197, 1);
+    box-shadow: 2px 6px 6px -2px rgb(40 40 40);
+    height: 46px;
+    margin-top: 1%;
+    margin-left: 21%;
+    width: 1170px;
+}
+
+.franjaVerde p{
+    color: white;
+    padding-top: 13px;
+    padding-left: 71px;
+}
+.linea{
+    width:78%;
+    margin-top: 12%;
+    margin-left: 21%;
+}
+.linea2{
+    margin-bottom: 4%;
+    width: 78%;
+    margin-top: 1%;
+    margin-left: 21%;
+}
+.caja{
+    margin-top: 2%;
+    margin-left: 23%;
+}
+.parqueadero{
+    margin-top: 5%;
+    margin-left: 30%;
+}
+
+.informacionCaja{
+   column-count:2;
+   column-gap:20px;
+   margin-left: 30%;
+}
+.card{
+    float: left;
+    height: 477px;
+    display: inline-block;
+    margin-right: -19.9%;
+    margin-left: 23%;
+    margin-bottom: 5%;
+    width: 23%;
+    border-radius: 7px;
+    -webkit-box-shadow: 4px 4px 31px -5px rgb(1, 197, 1);
+    -moz-box-shadow: 4px 4px 31px -5px rgb(1, 197, 1);
+    box-shadow: 15px 15px 31px -5px rgb(1, 197, 1);
+}
+.cardCash{
+    float: left;
+    height: 400px;
+    display: inline-block;
+    padding-left: 19px;
+    margin-right: -19.9%;
+    margin-left: 23%;
+    margin-bottom: 5%;
+    width: 23%;
+    border-radius: 7px;
+    -webkit-box-shadow: 4px 4px 31px -5px rgb(1, 197, 1);
+    -moz-box-shadow: 4px 4px 31px -5px rgb(1, 197, 1);
+    box-shadow: 15px 15px 31px -5px rgb(1, 197, 1);
+}
+
+.cardSearch{
+    float: left;
+    height: 441px;
+    display: inline-block;
+    margin-right: -19.9%;
+    margin-left: 23%;
+    margin-bottom: 5%;
+    width: 23%;
+    border-radius: 7px;
+    -webkit-box-shadow: 4px 4px 31px -5px rgb(1, 197, 1);
+    -moz-box-shadow: 4px 4px 31px -5px rgb(1, 197, 1);
+    box-shadow: 15px 15px 31px -5px rgb(1, 197, 1);
+}
+
+.card1{
+    float: left;
+    height: 164px;
+    display: inline-block;
+    margin-right: -19.9%;
+    margin-left: 25%;
+    margin-bottom: 5%;
+    width: 20%;
+    border-radius: 7px;
+    -webkit-box-shadow: 4px 4px 31px -5px rgb(1, 197, 1);
+    -moz-box-shadow: 4px 4px 31px -5px rgb(1, 197, 1);
+    box-shadow: 15px 15px 31px -5px rgb(1, 197, 1);
+}
+.card2{
+    float: left;
+    height: 164px;
+    display: inline-block;
+    margin-right: -19.9%;
+    margin-left: 25%;
+    margin-bottom: 5%;
+    width: 20%;
+    border-radius: 7px;
+    -webkit-box-shadow: 4px 4px 31px -5px #ff0000;
+    -moz-box-shadow: 4px 4px 31px -5px #ff0000;
+    box-shadow: 15px 15px 31px -5px #ff0000;
+}
+.card-content{
+    margin-bottom: 2px;
+    margin-top: -14px;
+    padding-left: 10%;
+    padding-right: 5%;
+ }
+
+.cardCash-content{
+    margin-bottom: 2px;
+    margin-top: 35px;
+    padding-left: 10%;
+    padding-right: 5%;
+ }
+
+.cardParking-content{
+    margin-bottom: 2px;
+    margin-top: 45px;
+    padding-left: 10%;
+    padding-right: 5%;
+ }
+.card1-content{
+    margin-bottom: 2px;
+    margin-top: 34px;
+    padding-left: 10%;
+    padding-right: 5%;
+ }
+
+.cardSearch-content{
+    margin-bottom: 2px;
+    margin-top: -9px;
+    padding-left: 10%;
+    padding-right: 5%;
+ }
+
+.card-content p{
+    padding-top: 0px;
+}
+.cardSearch-content p{
+    padding-top: 0px;
+}
+
+.posicionCard{
+    width: 100%;
+    margin: 0;
+}
+.card-img{
+    margin-bottom: 7%;
+    text-align: center;
+    margin-top: 22px;
+}
+.cardSearch-img{
+    margin-bottom: 7%;
+    text-align: center;
+    margin-top: 22px;
+}
+.card-img img {
+    max-height: 174px;
+    max-width: 287px;
+}
+.cardSearch-img img {
+    max-height: 174px;
+    max-width: 287px;
+}
+
+
+.icon-placeholder{
+    padding: 0.25em 0.6em;
+    border-radius: 0.3rem;
+    border: 1px solid rgb(1, 197, 1);
+    text-align: center;
+    width: 54%;
+    height: 40px;
+
+}
+.icon-placeholder2{
+    padding: 0.25em 0.6em;
+    border-radius: 0.3rem;
+    border: 1px solid rgb(1, 197, 1);
+    text-align: center;
+    width: 95%;
+    height: 40px;
+
+}
+.icon-placeholder::placeholder {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 1000;
+}
+.icon-placeholder2::placeholder {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 1000;
+}
+
+.ubicacion{
+    margin: -40px 0 0 73%;
+}
+.ubicacion2{
+    margin: 321px 0 0 80%;
+    position: absolute;
+}
+.ubicacionCash{
+    margin: 30px 0 0 80%;
+    position: absolute;
+}
+.lineaVertical{
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    background: black;
+
+}
+.footer {
+    background-color: black;
+    box-shadow: 2px 0px 5px 2px rgb(40 40 40);
+    top: 0%;
+    width: 300px;
+    height: 995px;
+    position: fixed;
+
+}
+.crearCaja{
+    font-family: 'Playfair Display SC', serif;
+    float: left;
+    text-align: center;
+    width: 36%;
+    margin-left: 100%;
+    text-decoration: black;
+    font-weight:100;
+    font-size:17px;
+    color:#ffffff;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:55px;
+    padding-right:55px;
+    background-color: rgb(1, 197, 1);
+}
+.cuadrarCaja{
+    font-family: 'Playfair Display SC', serif;
+    float: left;
+    text-align: center;
+    width: 36%;
+    margin-left: 40%;
+    text-decoration: black;
+    font-weight:100;
+    font-size:17px;
+    color:#ffffff;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:55px;
+    padding-right:55px;
+    background-color: rgb(1, 197, 1);
+}
+
+.botonesCaja{
+   column-count:2;
+   column-gap:20px;
+   margin-left: 14%;
+}
+
+
+.botonGenerar{
+    position: absolute;
+    margin-top: 13%;
+    margin-left: 202px;
+    text-align: center;
+}
+.botonGenerar a{
+    margin-top: 0px;
+    color: rgb(1, 197, 1);
+    text-decoration: none;
+}
+.tableTariff{
+    margin-top: 6%;
+    margin-left: 27%;
+    width: 68%;
+    margin-bottom: 12%;
+}
+.marginTable{
+    padding-left: 10px;
+}
+.margen{
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
+#contenedor_carga{
+    background: rgba(1,1,1,0.9);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    z-index: 10000;
+}
+#carga{
+    border: 15px solid #ccc;
+    border-top-color: rgb(1, 197, 1);
+    border-top-style: groove;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin:auto;
+    -webkit-animation: girar 1.5s linear infinite;
+    -o-animation: girar 1.5s linear infinite;
+    animation: girar 1.5s linear infinite;
+}
+@keyframes girar {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg); }
+}
